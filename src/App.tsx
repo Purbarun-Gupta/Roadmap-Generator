@@ -14,6 +14,7 @@ import SkillGapPage from "./pages/SkillGapPage.tsx";
 import ResourcesPage from "./pages/ResourcesPage.tsx";
 import ProfilePage from "./pages/ProfilePage.tsx";
 import ResumeAnalyzerPage from "./pages/ResumeAnalyzerPage.tsx";
+import StudyPlannerPage from "./pages/StudyPlannerPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
