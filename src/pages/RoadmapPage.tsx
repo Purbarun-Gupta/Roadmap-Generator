@@ -33,6 +33,41 @@ const generateRoadmap = (career: string): Stage[] => {
   return roadmaps[career] || roadmaps.default;
 };
 
+const topicVideos: Record<string, string> = {
+  "HTML5 Semantics": "https://www.youtube.com/watch?v=kGW8Al_cga4",
+  "CSS Flexbox & Grid": "https://www.youtube.com/watch?v=JJSoEo8JSnc",
+  "Responsive Design": "https://www.youtube.com/watch?v=srvUrASNj0s",
+
+  "Variables & Functions": "https://www.youtube.com/watch?v=W6NZfCO5SIk",
+  "DOM Manipulation": "https://www.youtube.com/watch?v=0ik6X4DJKCc",
+  "Async/Await": "https://www.youtube.com/watch?v=V_Kr9OSfDeU",
+
+  "Components & Props": "https://www.youtube.com/watch?v=SqcY0GlETPk",
+  "State Management": "https://www.youtube.com/watch?v=O6P86uwfdR0",
+  "Hooks & Context": "https://www.youtube.com/watch?v=TNhaISOUy6Q",
+
+  "Node.js": "https://www.youtube.com/watch?v=TlB_eWDSMt4",
+  "REST APIs": "https://www.youtube.com/watch?v=-MTSQjw5DrM",
+  "Database Design": "https://www.youtube.com/watch?v=ztHopE5Wnpc",
+
+  "Authentication": "https://www.youtube.com/watch?v=mbsmsi7l3r4",
+  "Cloud Deployment": "https://www.youtube.com/watch?v=71wSzpLyW9k",
+  "CI/CD": "https://www.youtube.com/watch?v=scEDHsr3APg"
+};
+
+const projectVideos: Record<string, string> = {
+  "Personal Portfolio Page": "https://www.youtube.com/watch?v=bmpI252DmiI",
+  "Interactive Quiz App": "https://www.youtube.com/watch?v=PBcqGxrr9g8",
+  "Task Manager App": "https://www.youtube.com/watch?v=pCA4qpQDZD8",
+  "Blog API": "https://www.youtube.com/watch?v=G6D9cBaLViA",
+  "Full-Stack E-commerce App": "https://www.youtube.com/watch?v=AN3t-OmdyKA",
+
+  "Hello World Project": "https://www.youtube.com/watch?v=UB1O30fR-EE",
+  "Intermediate Project": "https://www.youtube.com/watch?v=jS4aFq5-91M",
+  "Advanced Project": "https://www.youtube.com/watch?v=nu_pCVPKzTk",
+  "Capstone Project": "https://www.youtube.com/watch?v=4UZrsTqkcW4"
+};
+
 export default function RoadmapPage() {
   const location = useLocation();
   const state = location.state as { career?: string } | null;
@@ -56,12 +91,12 @@ export default function RoadmapPage() {
   return (
     <div className="min-h-screen bg-[#02060c] text-white pt-20 relative overflow-hidden">
       {/* Background Grid Pattern from image_2fde03.png */}
-      <div className="absolute inset-0 z-0 opacity-10 pointer-events-none" 
-           style={{ backgroundImage: `radial-gradient(#10b981 1px, transparent 1px)`, backgroundSize: '40px 40px' }} />
+      <div className="absolute inset-0 z-0 opacity-10 pointer-events-none"
+        style={{ backgroundImage: `radial-gradient(#10b981 1px, transparent 1px)`, backgroundSize: '40px 40px' }} />
 
       <div className="container mx-auto px-4 py-12 max-w-6xl relative z-10">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-          
+
           {/* Header matched to image_2407ff.png */}
           <div className="max-w-3xl mb-4">
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-2 text-white">
@@ -77,7 +112,7 @@ export default function RoadmapPage() {
               <span className="text-sm font-bold text-[#10b981]">{progress}%</span>
             </div>
             <div className="w-full h-2.5 bg-[#1a1f2e] rounded-full overflow-hidden">
-              <motion.div 
+              <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: `${progress}%` }}
                 className="h-full bg-gradient-to-r from-[#10b981] to-[#34d399]"
@@ -88,15 +123,15 @@ export default function RoadmapPage() {
 
           {/* View Toggle Switch */}
           <div className="flex justify-center gap-4 mb-20">
-            <Button 
-              variant="ghost" 
+            <Button
+              variant="ghost"
               onClick={() => setView("timeline")}
               className={`rounded-full px-10 h-12 border transition-all ${view === "timeline" ? "bg-[#10b981] text-[#02060c] font-bold border-transparent shadow-[0_0_20px_rgba(16,185,129,0.3)]" : "border-white/10 text-gray-400 hover:text-white"}`}
             >
               Timeline View
             </Button>
-            <Button 
-              variant="ghost" 
+            <Button
+              variant="ghost"
               onClick={() => setView("tree")}
               className={`rounded-full px-10 h-12 border transition-all ${view === "tree" ? "bg-[#10b981] text-[#02060c] font-bold border-transparent shadow-[0_0_20px_rgba(16,185,129,0.3)]" : "border-white/10 text-gray-400 hover:text-white"}`}
             >
@@ -115,17 +150,17 @@ export default function RoadmapPage() {
                   const isLeft = i % 2 === 0;
                   return (
                     <div key={i} className={`relative flex items-center justify-center md:justify-between w-full md:mb-16 ${isLeft ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                      
-                      <motion.div 
+
+                      <motion.div
                         initial={{ opacity: 0, x: isLeft ? -40 : 40 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         className="w-full md:w-[46%] z-10"
                       >
-                        <div 
+                        <div
                           onClick={() => toggleStatus(i)}
                           className={`p-8 rounded-[2.5rem] border transition-all cursor-pointer group hover:scale-[1.02]
-                            ${stage.status === 'completed' ? 'bg-[#10b981]/5 border-[#10b981]/40 shadow-[0_0_40px_rgba(16,185,129,0.1)]' : 
+                            ${stage.status === 'completed' ? 'bg-[#10b981]/5 border-[#10b981]/40 shadow-[0_0_40px_rgba(16,185,129,0.1)]' :
                               stage.status === 'in-progress' ? 'bg-orange-500/5 border-orange-500/40' : 'bg-[#0a0f18] border-white/10 hover:border-[#10b981]/50 shadow-xl'}`}
                         >
                           <div className="flex items-center justify-between mb-6">
@@ -133,21 +168,29 @@ export default function RoadmapPage() {
                               {stage.status === 'completed' ? <CheckCircle2 size={28} /> : <span className="text-xl font-black">{i + 1}</span>}
                             </div>
                             <div className="text-right">
-                                <p className="text-[10px] uppercase font-bold tracking-widest text-gray-500">Duration</p>
-                                <p className="text-sm font-bold text-white">{stage.duration}</p>
+                              <p className="text-[10px] uppercase font-bold tracking-widest text-gray-500">Duration</p>
+                              <p className="text-sm font-bold text-white">{stage.duration}</p>
                             </div>
                           </div>
-                          
+
                           <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-[#10b981] transition-colors">{stage.title}</h3>
-                          
+
                           <div className="flex flex-wrap gap-2 mb-6">
                             {stage.topics.slice(0, 3).map(t => (
-                              <span key={t} className="text-[11px] px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-400 font-medium">
+                              <span
+                                key={t}
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  const url = topicVideos[t];
+                                  if (url) window.open(url, "_blank");
+                                }}
+                                className="text-[11px] px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-400 font-medium cursor-pointer hover:text-[#10b981]"
+                              >
                                 {t}
                               </span>
                             ))}
                           </div>
-                          
+
                           <div className="flex items-center justify-between pt-5 border-t border-white/5">
                             <span className="text-xs font-bold text-[#10b981] opacity-0 group-hover:opacity-100 transition-opacity">Launch Module</span>
                             <ArrowRight className="text-[#10b981] w-5 h-5 transform group-hover:translate-x-2 transition-transform" />
@@ -160,7 +203,7 @@ export default function RoadmapPage() {
 
                       {/* Horizontal Connector */}
                       <div className={`absolute top-1/2 -translate-y-1/2 h-[1px] bg-[#10b981]/20 hidden md:block
-                        ${isLeft ? 'left-[46%] right-1/2' : 'left-1/2 right-[46%]'}`} 
+                        ${isLeft ? 'left-[46%] right-1/2' : 'left-1/2 right-[46%]'}`}
                       />
                     </div>
                   );
@@ -179,7 +222,7 @@ export default function RoadmapPage() {
                       </div>
                       <div className="text-left">
                         <h4 className="font-bold text-lg text-white">{stage.title}</h4>
-                        <span className="text-xs text-gray-500 mt-1.5 flex items-center gap-1.5 font-medium"><Clock size={14}/> {stage.duration}</span>
+                        <span className="text-xs text-gray-500 mt-1.5 flex items-center gap-1.5 font-medium"><Clock size={14} /> {stage.duration}</span>
                       </div>
                     </div>
                     {expandedIdx === i ? <ChevronUp className="text-gray-500" /> : <ChevronDown className="text-gray-500" />}
@@ -188,16 +231,38 @@ export default function RoadmapPage() {
                     <motion.div initial={{ height: 0 }} animate={{ height: "auto" }} className="px-6 pb-8 pt-2 border-t border-white/5">
                       <div className="grid md:grid-cols-2 gap-8 pt-6">
                         <div className="space-y-4">
-                           <p className="text-[10px] font-black text-[#10b981] uppercase tracking-widest">Core Topics</p>
-                           <div className="flex flex-wrap gap-2">
-                             {stage.topics.map(t => <span key={t} className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-xs text-gray-400">{t}</span>)}
-                           </div>
+                          <p className="text-[10px] font-black text-[#10b981] uppercase tracking-widest">Core Topics</p>
+                          <div className="flex flex-wrap gap-2">
+                            {stage.topics.map(t => (
+                              <span
+                                key={t}
+                                onClick={() => {
+                                  const url = topicVideos[t];
+                                  if (url) window.open(url, "_blank");
+                                }}
+                                className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-xs text-gray-400 cursor-pointer hover:text-[#10b981]"
+                              >
+                                {t}
+                              </span>
+                            ))}
+                          </div>
                         </div>
                         <div className="space-y-4">
-                           <p className="text-[10px] font-black text-[#10b981] uppercase tracking-widest">Milestone Projects</p>
-                           <div className="flex flex-wrap gap-2">
-                             {stage.projects.map(p => <span key={p} className="px-3 py-1.5 bg-[#10b981]/10 text-[#10b981] border border-[#10b981]/20 rounded-lg text-xs font-bold">{p}</span>)}
-                           </div>
+                          <p className="text-[10px] font-black text-[#10b981] uppercase tracking-widest">Milestone Projects</p>
+                          <div className="flex flex-wrap gap-2">
+                            {stage.projects.map(p => (
+                              <span
+                                key={p}
+                                onClick={() => {
+                                  const url = projectVideos[p];
+                                  if (url) window.open(url, "_blank");
+                                }}
+                                className="px-3 py-1.5 bg-[#10b981]/10 text-[#10b981] border border-[#10b981]/20 rounded-lg text-xs font-bold cursor-pointer hover:bg-[#10b981]/20"
+                              >
+                                {p}
+                              </span>
+                            ))}
+                          </div>
                         </div>
                       </div>
                       <div className="mt-10 flex justify-end">
