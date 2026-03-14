@@ -124,7 +124,7 @@ export default function StudyPlannerPage() {
             <div className="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center">
               <CalendarDays className="w-5 h-5 text-primary-foreground" />
             </div>
-            <h1 className="font-display text-3xl font-bold text-foreground">AI Daily Study Planner</h1>
+            <h1 className="font-display text-5xl font-bold text-foreground">AI Daily Study Planner</h1>
           </div>
           <p className="text-muted-foreground mb-8 ml-[52px]">
             Let AI convert your career roadmap into a personalized daily & weekly schedule.

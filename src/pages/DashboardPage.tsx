@@ -24,7 +24,7 @@ export default function DashboardPage() {
     <div className="min-h-screen bg-background pt-20">
       <div className="container mx-auto px-4 py-12 max-w-5xl">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-          <h1 className="font-display text-3xl font-bold text-foreground mb-2">Dashboard</h1>
+          <h1 className="font-display text-5xl font-bold text-foreground mb-2">Dashboard</h1>
           <p className="text-muted-foreground mb-8">Track your learning progress and stay motivated.</p>
 
           {/* Stats Grid */}
