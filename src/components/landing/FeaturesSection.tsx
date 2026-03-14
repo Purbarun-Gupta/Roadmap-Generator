@@ -1,18 +1,20 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { Map, BarChart3, BookOpen, TrendingUp, MessageCircle, FolderKanban, FileSearch, CalendarDays } from "lucide-react";
 
 const features = [
-  { icon: Map, title: "AI Roadmap Generator", desc: "Get a step-by-step learning path tailored to your career goals." },
-  { icon: BarChart3, title: "Skill Gap Analyzer", desc: "Identify missing skills and get targeted recommendations." },
-  { icon: BookOpen, title: "Learning Resource Finder", desc: "Curated courses, tutorials, and articles for every topic." },
-  { icon: TrendingUp, title: "Progress Tracking", desc: "Track your learning journey with visual progress metrics." },
-  { icon: MessageCircle, title: "AI Mentor Chat", desc: "Get instant answers to your learning questions from AI." },
-  { icon: FolderKanban, title: "Project Recommendations", desc: "Build real-world projects to strengthen your portfolio." },
-  { icon: FileSearch, title: "Resume Career Analyzer", desc: "Upload your resume and get career path recommendations." },
-  { icon: CalendarDays, title: "Daily Study Planner", desc: "Convert your roadmap into a manageable daily schedule." },
+  { icon: Map, title: "AI Roadmap Generator", desc: "Get a step-by-step learning path tailored to your career goals.", path: "/generator" },
+  { icon: BarChart3, title: "Skill Gap Analyzer", desc: "Identify missing skills and get targeted recommendations.", path: "/skill-gap" },
+  { icon: BookOpen, title: "Learning Resource Finder", desc: "Curated courses, tutorials, and articles for every topic.", path: "/resources" },
+  { icon: TrendingUp, title: "Progress Tracking", desc: "Track your learning journey with visual progress metrics.", path: "/progress" },
+  { icon: MessageCircle, title: "AI Mentor Chat", desc: "Get instant answers to your learning questions from AI.", path: "/mentor" },
+  { icon: FolderKanban, title: "Project Recommendations", desc: "Build real-world projects to strengthen your portfolio.", path: "/roadmap" },
+  { icon: FileSearch, title: "Resume Career Analyzer", desc: "Upload your resume and get career path recommendations.", path: "/resume-analyzer" },
+  { icon: CalendarDays, title: "Daily Study Planner", desc: "Convert your roadmap into a manageable daily schedule.", path: "/study-planner" },
 ];
 
 export default function FeaturesSection() {
+  const navigate = useNavigate();
   return (
     <section className="py-24 bg-background">
       <div className="container mx-auto px-4">
@@ -38,6 +40,7 @@ export default function FeaturesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
+              onClick={() => navigate(f.path)}
               className="group p-6 rounded-2xl bg-card border border-border/50 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 cursor-pointer"
             >
               <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">

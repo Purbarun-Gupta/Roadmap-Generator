@@ -14,6 +14,7 @@ import SkillGapPage from "./pages/SkillGapPage.tsx";
 import ResourcesPage from "./pages/ResourcesPage.tsx";
 import ProfilePage from "./pages/ProfilePage.tsx";
 import ResumeAnalyzerPage from "./pages/ResumeAnalyzerPage.tsx";
+import StudyPlannerPage from "./pages/StudyPlannerPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -36,6 +37,7 @@ const App = () => (
           <Route path="/resources" element={<ResourcesPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/resume-analyzer" element={<ResumeAnalyzerPage />} />
+          <Route path="/study-planner" element={<StudyPlannerPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
