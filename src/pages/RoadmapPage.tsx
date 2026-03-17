@@ -23,6 +23,140 @@ const generateRoadmap = (career: string): Stage[] => {
       { title: "Backend & APIs", duration: "3 weeks", topics: ["Node.js", "REST APIs", "Database Design"], resources: ["Node.js Docs", "The Odin Project"], projects: ["Blog API"], status: "upcoming" },
       { title: "Full-Stack Project & Deployment", duration: "4 weeks", topics: ["Authentication", "Cloud Deployment", "CI/CD"], resources: ["Vercel Docs", "AWS Free Tier"], projects: ["Full-Stack E-commerce App"], status: "upcoming" },
     ],
+     /* ---------------- DATA SCIENTIST ---------------- */
+
+    "Data Scientist": [
+      {
+        title: "Python & Data Fundamentals",
+        duration: "3 weeks",
+        topics: ["Python Basics", "NumPy", "Pandas"],
+        resources: ["Python Docs", "Kaggle Learn"],
+        projects: ["Data Cleaning Project"],
+        status: "upcoming"
+      },
+      {
+        title: "Data Analysis & Visualization",
+        duration: "3 weeks",
+        topics: ["Matplotlib", "Seaborn", "Exploratory Data Analysis"],
+        resources: ["Kaggle Microcourses", "DataCamp"],
+        projects: ["EDA on Real Dataset"],
+        status: "upcoming"
+      },
+      {
+        title: "Statistics & Probability",
+        duration: "4 weeks",
+        topics: ["Probability Distributions", "Hypothesis Testing", "Regression"],
+        resources: ["StatQuest", "Khan Academy"],
+        projects: ["Statistical Analysis Report"],
+        status: "upcoming"
+      },
+      {
+        title: "Machine Learning Basics",
+        duration: "4 weeks",
+        topics: ["Supervised Learning", "Unsupervised Learning", "Model Evaluation"],
+        resources: ["Scikit-learn Docs", "Andrew Ng ML Course"],
+        projects: ["Predictive Model Project"],
+        status: "upcoming"
+      },
+      {
+        title: "Data Science Capstone",
+        duration: "4 weeks",
+        topics: ["Feature Engineering", "Model Deployment", "Data Storytelling"],
+        resources: ["Kaggle Competitions", "Medium Articles"],
+        projects: ["End-to-End Data Science Project"],
+        status: "upcoming"
+      }
+    ],
+
+    /* ---------------- AI ENGINEER ---------------- */
+
+    "AI Engineer": [
+      {
+        title: "Programming & Math Foundations",
+        duration: "4 weeks",
+        topics: ["Python for AI", "Linear Algebra", "Probability Basics"],
+        resources: ["MIT OpenCourseWare", "Khan Academy"],
+        projects: ["Matrix Operations in Python"],
+        status: "upcoming"
+      },
+      {
+        title: "Machine Learning Fundamentals",
+        duration: "4 weeks",
+        topics: ["Regression", "Classification", "Model Evaluation"],
+        resources: ["Scikit-learn Docs", "Coursera ML Course"],
+        projects: ["Spam Email Classifier"],
+        status: "upcoming"
+      },
+      {
+        title: "Deep Learning",
+        duration: "5 weeks",
+        topics: ["Neural Networks", "TensorFlow", "PyTorch"],
+        resources: ["DeepLearning.ai", "PyTorch Tutorials"],
+        projects: ["Image Classifier"],
+        status: "upcoming"
+      },
+      {
+        title: "Advanced AI Systems",
+        duration: "4 weeks",
+        topics: ["Computer Vision", "Natural Language Processing", "Transformers"],
+        resources: ["HuggingFace Docs", "Fast.ai"],
+        projects: ["Chatbot AI Project"],
+        status: "upcoming"
+      },
+      {
+        title: "AI Deployment & MLOps",
+        duration: "3 weeks",
+        topics: ["Model Deployment", "Docker", "Model Monitoring"],
+        resources: ["AWS ML Docs", "Kubeflow Guides"],
+        projects: ["Deploy AI API"],
+        status: "upcoming"
+      }
+    ],
+
+    /* ---------------- MACHINE LEARNING ENGINEER ---------------- */
+
+    "Machine Learning Engineer": [
+      {
+        title: "Python & Math Foundations",
+        duration: "3 weeks",
+        topics: ["Python Programming", "Linear Algebra", "Statistics"],
+        resources: ["Khan Academy", "Python Docs"],
+        projects: ["Math Simulation in Python"],
+        status: "upcoming"
+      },
+      {
+        title: "Machine Learning Algorithms",
+        duration: "4 weeks",
+        topics: ["Regression Models", "Decision Trees", "Clustering"],
+        resources: ["Scikit-learn Docs", "Andrew Ng ML"],
+        projects: ["House Price Predictor"],
+        status: "upcoming"
+      },
+      {
+        title: "Deep Learning",
+        duration: "4 weeks",
+        topics: ["Neural Networks", "CNN", "RNN"],
+        resources: ["DeepLearning.ai", "PyTorch Tutorials"],
+        projects: ["Image Recognition Model"],
+        status: "upcoming"
+      },
+      {
+        title: "ML Systems & Optimization",
+        duration: "4 weeks",
+        topics: ["Feature Engineering", "Hyperparameter Tuning", "Model Optimization"],
+        resources: ["Google ML Crash Course", "Kaggle"],
+        projects: ["Optimized ML Pipeline"],
+        status: "upcoming"
+      },
+      {
+        title: "Production ML & Deployment",
+        duration: "3 weeks",
+        topics: ["MLOps", "Docker", "Model Serving"],
+        resources: ["Kubeflow Docs", "AWS ML"],
+        projects: ["Deploy ML Model API"],
+        status: "upcoming"
+      }
+    ],
     default: [
       { title: "Foundation & Core Concepts", duration: "3 weeks", topics: ["Core Theory", "Basic Tools", "Environment Setup"], resources: ["Official Documentation", "Introductory Courses"], projects: ["Hello World Project"], status: "upcoming" },
       { title: "Intermediate Skills", duration: "4 weeks", topics: ["Advanced Concepts", "Best Practices", "Testing"], resources: ["Online Courses", "Technical Books"], projects: ["Intermediate Project"], status: "upcoming" },
