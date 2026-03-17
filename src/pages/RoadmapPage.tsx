@@ -82,13 +82,13 @@ export default function RoadmapPage() {
     const roadmapKey = `roadmap_status_${career}`;
     const saved = localStorage.getItem(roadmapKey);
     if (saved) {
-      const statuses: Record<number, string> = JSON.parse(saved);
-      setStages((prev) =>
-        prev.map((s, i) => ({
-          ...s,
-          status: (statuses[i] as Stage["status"]) || s.status,
-        }))
-      );
+        const statuses: Record<number, string> = JSON.parse(saved);
+        setStages((prev) =>
+          prev.map((s, i) => ({
+            ...s,
+            status: (statuses[i] as Stage["status"]) ?? s.status,
+          }))
+        );
     }
   }, [career, location.key]);
 
