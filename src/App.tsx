@@ -39,6 +39,7 @@ const App = () => (
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/resume-analyzer" element={<ResumeAnalyzerPage />} />
           <Route path="/study-planner" element={<StudyPlannerPage />} />
+          <Route path="/module" element={<ModulePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
