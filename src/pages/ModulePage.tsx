@@ -73,6 +73,30 @@ function ResourceCard({ resource, completed, onToggle }: { resource: ModuleResou
   );
 }
 
+const projectLinks: Record<string, string> = {
+  "Personal Portfolio Page": "https://www.youtube.com/watch?v=bmpI252DmiI",
+  "Interactive Quiz App": "https://www.youtube.com/watch?v=PBcqGxrr9g8",
+  "Task Manager App": "https://www.youtube.com/watch?v=pCA4qpQDZD8",
+  "Blog API": "https://github.com/nodejs/examples",
+  "Full-Stack E-commerce App": "https://www.youtube.com/watch?v=AN3t-OmdyKA",
+
+  "Data Cleaning Project": "https://www.youtube.com/watch?v=vmEHCJofslg",
+  "EDA on Real Dataset": "https://www.youtube.com/watch?v=xi0vhXFPegw",
+  "Statistical Analysis Report": "https://www.youtube.com/watch?v=xxpc-HPKN28",
+  "Predictive Model Project": "https://www.youtube.com/watch?v=0Lt9w-BxKFQ",
+  "End-to-End Data Science Project": "https://github.com/krishnaik06/Complete-Data-Science-Projects",
+
+  "Spam Email Classifier": "https://www.youtube.com/watch?v=ZCVn4x5y7FY",
+  "Image Classifier": "https://www.youtube.com/watch?v=tPYj3fFJGjk",
+  "Chatbot AI Project": "https://www.youtube.com/watch?v=JgWm6sQwS_I",
+  "Deploy AI API": "https://www.youtube.com/watch?v=0sOvCWFmrtA",
+
+  "House Price Predictor": "https://www.youtube.com/watch?v=0Lt9w-BxKFQ",
+  "Image Recognition Model": "https://www.youtube.com/watch?v=aircAruvnKk",
+  "Optimized ML Pipeline": "https://github.com/ageron/handson-ml",
+  "Deploy ML Model API": "https://www.youtube.com/watch?v=UbCWoMf80PY"
+};
+
 export default function ModulePage() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -241,7 +265,12 @@ export default function ModulePage() {
             </div>
             <div className="grid sm:grid-cols-2 gap-3">
               {state.projects.map((p) => (
-                <div key={p} className="p-5 rounded-2xl bg-[#10b981]/5 border border-[#10b981]/20 hover:border-[#10b981]/40 transition-colors">
+                <div key={p}
+                  onClick={() => {
+                    const url = projectLinks[p];
+                    if (url) window.open(url, "_blank");
+                  }}
+                className="p-5 rounded-2xl bg-[#10b981]/5 border border-[#10b981]/20 hover:border-[#10b981]/40 transition-colors">
                   <h4 className="font-bold text-[#10b981] text-sm">{p}</h4>
                   <p className="text-xs text-gray-500 mt-1">Build this project to solidify your understanding</p>
                 </div>
