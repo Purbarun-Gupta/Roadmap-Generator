@@ -94,9 +94,9 @@ export default function RoadmapPage() {
 
   const toggleStatus = (i: number) => {
     setStages((prev) => {
-      const updated = prev.map((s, idx) => {
+      const updated: Stage[] = prev.map((s, idx) => {
         if (idx !== i) return s;
-        const next = s.status === "upcoming" ? "in-progress" : s.status === "in-progress" ? "completed" : "upcoming";
+        const next: Stage["status"] = s.status === "upcoming" ? "in-progress" : s.status === "in-progress" ? "completed" : "upcoming";
         return { ...s, status: next };
       });
       // Persist
