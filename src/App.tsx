@@ -15,6 +15,7 @@ import ResourcesPage from "./pages/ResourcesPage.tsx";
 import ProfilePage from "./pages/ProfilePage.tsx";
 import ResumeAnalyzerPage from "./pages/ResumeAnalyzerPage.tsx";
 import StudyPlannerPage from "./pages/StudyPlannerPage.tsx";
+import ModulePage from "./pages/ModulePage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/resume-analyzer" element={<ResumeAnalyzerPage />} />
           <Route path="/study-planner" element={<StudyPlannerPage />} />
+          <Route path="/module" element={<ModulePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
